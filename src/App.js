@@ -1,7 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
-
+import logo from "./logo.svg";
+import "./App.css";
+import { capturar, guardar } from "../src/store/actions/pokemon.actions";
+import { useDispatch } from "react-redux";
 function App() {
+  const dispatch = useDispatch()
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +21,12 @@ function App() {
           Learn React
         </a>
       </header>
+      <button onClick={()=>{dispatch(capturar("charizard"))}}>
+        capturar
+      </button>
+      <button onClick={()=>{dispatch(guardar("charizard"))}}>
+        guardar
+      </button>
     </div>
   );
 }
